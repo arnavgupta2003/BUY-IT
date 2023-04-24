@@ -1,39 +1,64 @@
 import React,{ useState } from 'react'
 
 const Navbar = () => {
-      let Links =[
-      {name:"Home",link:"/"},
-      {name:"Cart",link:"/cart"},
-      {name:"Profile",link:"/"},
-      {name:"Orders",link:"/"},
-    ];
-    let [open,setOpen]=useState(false);
+    const x =1
+  const Links =[
+      {
+        value:x,
+        domainName:"Home",
+        domain:"/",
+        
+      },
+      {
+        value:x+1,
+        domainName:"Cart",
+        domain:"/cart",
+        
+      },
+
+      {
+        value:x+2,
+        domainName:"Profile",
+        domain:"/profile",
+        
+      },
+
+      {
+        value:x+3,
+        domainName:"Orders",
+        domain:"/orders",
+        
+      },
+  ];
+
   return (
     <div className='shadow-md w-full fixed top-0 left-0'>
-      <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
-      <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-gray-800'>
-        <span className='text-3xl text-indigo-600 mr-1 pt-2'>
-        <ion-icon name="logo-ionic"></ion-icon>
-        </span>
+      <div>
+        <div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+      <div className='md:flex bg-white items-center py-3 md:px-10 justify-between px-7'>
+        
+      <div className='font-bold text-2xl  text-gray-900'>
         Online Retail
       </div>
-      
-      <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
-      <ion-icon name={open ? 'close':'menu'}></ion-icon>
-      </div>
-
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
+      <div className={`md:flex  md:pb-0 pb-12  md:static bg-white md:z-auto z-[-1] absolute left-0 w-fdivl md:w-auto md:pl-0 pl-9 md:items-center transition-all duration-500 ease-in top-20 `}>
         {
           Links.map((link)=>(
-            <li key={link.name} className=' hover:bg-gray-200 hover:rounded-xl hover:px-3 md:ml-8 text-xl md:my-0 my-7'>
-              <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
-            </li>
+            <div key={link.domainName} className=' text-xl hover:bg-gray-200 hover:rounded-xl hover:px-3 md:ml-8  md:my-0 my-7'>
+              <div>
+                <div>
+                  </div>
+                </div>
+              <a href={link.domain} className="text-gray-600 hover:text-gray-400 duration-500">{link.domainName}</a>
+            </div>
           ))
-        }
-        
-        
-      </ul>
+        }     
+      </div>
+      
       </div>
     </div>
   )
