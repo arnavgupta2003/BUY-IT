@@ -26,7 +26,7 @@ const Cart = () => {
       try {
       
         const cartItem2 = {
-          order_id : "try3", cust_id:customerId, tracking_merchant:"jaadoo_son",payment_status:"Incomplete",tracking_id:"mkbhd",cart_id:"hello"
+          order_id : (customerId.substring(1,4)+ Date.now().toString().substring(4,11)), cust_id:customerId, tracking_merchant:"jaadoo_son",payment_status:"Incomplete",tracking_id:"mkbhd",cart_id:(Date.now().toString().substring(1,11))
         };
         console.log(cartItem2);
         await axios.post("https://arnagupta2003-miniature-cod-w4695pgqqpvcg94g-3001.preview.app.github.dev/orderPost", cartItem2);
